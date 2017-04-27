@@ -10,12 +10,14 @@ function checkString(str){
 
 //type getString below
 function getString(str){
-try{
-  str = checkString(str);
+  try{
+    str = checkString(str);
+    console.log(str);
+  }
+  catch(e){
+    console.log(e.message);
+    str = getString("password");
+    console.log(str);
+  }
 }
-catch (e){
-  console.log(e.message);
-  getString("password");
-}
-}
-console.log(getString("35798"));
+console.log(getString("1234567890"));
